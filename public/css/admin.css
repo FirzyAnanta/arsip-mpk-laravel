@@ -1,0 +1,226 @@
+/* Admin Layout Styling */
+:root {
+    --primary-admin: #800000; /* Merah Maroon */
+    --secondary-admin: #FFD700; /* Kuning Emas */
+    --bg-admin: #f4f7fa; /* Latar belakang terang */
+    --sidebar-bg: #1e293b; /* Sidebar gelap */
+    --text-light: #f8fafc;
+    --text-dark: #334155;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-admin);
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.admin-layout {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: fixed;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #334155;
+}
+
+.sidebar-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-decoration: none;
+}
+.sidebar-logo span { color: var(--secondary-admin); }
+
+.sidebar-menu {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.5rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.menu-item:hover, .menu-item.active {
+    background-color: #334155;
+    color: var(--text-light);
+}
+
+.sidebar-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #334155;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    padding: 0;
+}
+.logout-btn:hover { color: var(--text-light); }
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    margin-left: 250px; /* Seukuran lebar sidebar */
+}
+
+.main-header {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.main-header h3 { margin: 0; font-weight: 500; }
+
+.content-wrapper {
+    padding: 2rem;
+}
+
+/* Styling untuk Tabel */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.content-header h1 { font-size: 1.8rem; margin: 0; }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+.btn-primary {
+    background-color: var(--primary-admin);
+    color: white;
+}
+.btn-primary:hover { background-color: #600000; }
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.data-table th, .data-table td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table th {
+    background-color: #f8fafc;
+    font-weight: 600;
+}
+
+/* Styling untuk Form */
+.form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.form-control {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+/* Alert Styling */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+}
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* Styling untuk Error Validasi */
+.form-control.is-invalid {
+    border-color: #ef4444; /* Merah */
+}
+.invalid-feedback {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+.img-preview {
+    display: block;
+    width: 150px;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* [PERBAIKAN] Styling untuk Grup Tombol Aksi di Tabel */
+.action-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-action {
+    display: inline-flex;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-edit {
+    color: #3b82f6; /* Biru */
+}
+.btn-edit:hover {
+    color: #1d4ed8;
+}
+
+.btn-delete {
+    color: #ef4444; /* Merah */
+}
+.btn-delete:hover {
+    color: #b91c1c;
+}
